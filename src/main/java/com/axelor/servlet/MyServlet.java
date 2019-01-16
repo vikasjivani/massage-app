@@ -9,7 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.axelor.pojo.User;
 import com.axelor.service.Login;
 
 
@@ -27,7 +29,10 @@ public class MyServlet extends HttpServlet {
 			boolean result = Login.ckeckLogin(request.getParameter("email"), request.getParameter("password"));
 
 			if (result) {
-				RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+				User user = Login.getUser();
+				HttpSession session = request.getSession();
+		        session.setAttribute("user", user);
+				RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
                 request.setAttribute("", "");
                 rd.forward(request, response);
 			} else {

@@ -10,28 +10,30 @@ import com.axelor.pojo.User;
 import com.axelor.utility.Configur;
 
 public class Login {
+	
+	static User user=null;
 	public static boolean ckeckLogin(String email, String password) {
 
 		Session ss = null;
 		int flag = 0;
+		
 		ss = Configur.createFactory().openSession(); // create session factory object
 														// ss = sf.openSession();
 														// System.out.println("configuration done");
-		List<User> user = ss.createQuery("from User where email = '" + email + "'and password = '" + password + "'").list();
+		user = (User) ss.createQuery("from User where email = '" + email + "'and password = '" + password + "'").uniqueResult();
 
-		for (User u : user) {
+		if(user != null) {
 			flag = 1;
-			System.out.println("\n\n" + u.getName());
-			Set<Semester> sem = u.getSemesters();
-
-			for (Semester s : sem) {
-				System.out.println("\n" + s.getSem());
-			}
 		}
-
+		
+		
+		
 		if (flag == 1)
 			return true;
 		else
 			return false;
 	}
+	public static User getUser() {
+		return user;
+	}	
 }
