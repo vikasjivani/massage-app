@@ -26,7 +26,8 @@ public class Main {
 		stu1.setName("axelor");
 		stu1.setStatus(1);
 		stu1.setType(1);
-
+		
+		
 		MoNo mn1 = new MoNo("983475", stu1);
 		MoNo mn2 = new MoNo("034875", stu1);
 		Set<MoNo> monos = new HashSet<>();
@@ -39,43 +40,62 @@ public class Main {
 		sems.add(sem1);
 		sems.add(sem2);
 
+		con = new Configuration().configure("com/axelor/xml/hibernate.cfg.xml");
+
+		sf = con.buildSessionFactory();
+
+		ss = sf.openSession();
+		//User stu1 = ss.find(User.class, 88);     //for only many record update
+		
 		Leave l1 = new Leave("1/2/2019", "4/2/2019", "no", 1, 1, stu1);
 		Leave l2 = new Leave("12/3/2019", "14/3/2019", "no", 1, 1, stu1);
 		Set<Leave> leaves = new HashSet<Leave>();
 		leaves.add(l1);
 		leaves.add(l2);
 
+		
+		
+		
+		
 		stu1.setMoNos(monos);
 		stu1.setSemesters(sems);
-		stu1.setLeaves(leaves);
-		con = new Configuration().configure("com/axelor/xml/hibernate.cfg.xml");
-
-		sf = con.buildSessionFactory();
-
-		ss = sf.openSession();
-		// query = ss.createQuery("from User where uid = 5");
-		//
-		// List<User> user =query.list();
-		//
-		// for(User u : user) {
-		// System.out.println("\n\n"+u.getName());
-		// Set<Semester> sem = u.getSemesters();
-		// for(Semester s : sem) {
-		//
-		// System.out.println("\n"+s.getSem());
-		// }
-		// }
-		//
+    	stu1.setLeaves(leaves);
+		
+//		 query = ss.createQuery("from User where uid = 5");
+//		
+//		 List<User> user =query.list();
+//		
+//		 for(User u : user) {
+//		 System.out.println("\n\n"+u.getName());
+//		 Set<Semester> sem = u.getSemesters();
+//		 for(Semester s : sem) {
+//		
+//		 System.out.println("\n"+s.getSem());
+//		 }
+//		 }
+//		
+		
+		
 		tr = ss.beginTransaction();
 
-		ss.save(stu1);
+		
+		
+		
 		ss.save(sem1);
 		ss.save(sem2);
 		ss.save(mn1);
 		ss.save(mn2);
 		ss.save(l1);
 		ss.save(l2);
-
+		ss.save(stu1);
+		
+		
+		
+		
+//		ss.persist(l1);
+//		ss.persist(l2);
+		
+		
 		tr.commit();
 
 	}

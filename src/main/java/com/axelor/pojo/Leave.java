@@ -49,6 +49,18 @@ public class Leave {
 	public Leave() {}
 		
 
+	
+	
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
 	public int getLid() {
 		return lid;
 	}

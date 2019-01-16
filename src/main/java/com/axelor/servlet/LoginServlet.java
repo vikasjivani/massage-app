@@ -15,7 +15,7 @@ import com.axelor.pojo.User;
 import com.axelor.service.Login;
 
 
-public class MyServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
@@ -27,7 +27,7 @@ public class MyServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 
 			boolean result = Login.ckeckLogin(request.getParameter("email"), request.getParameter("password"));
-
+				
 			if (result) {
 				User user = Login.getUser();
 				HttpSession session = request.getSession();

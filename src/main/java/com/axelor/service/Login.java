@@ -26,7 +26,7 @@ public class Login {
 			flag = 1;
 		}
 		
-		
+		ss.close();
 		
 		if (flag == 1)
 			return true;

@@ -24,7 +24,14 @@
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">axelor erp</a>
-		</div>
+		</div>							
+		
+		
+		
+		
+		
+		
+		
 	</div>
 	</nav>
 	<br>
@@ -75,7 +82,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h2>Fine Tracker</h2>
+						<h2>Leave Apply</h2>
 					</div>
 					<div class="panel-body">
 						<p>This library management system allows you to track the fine
@@ -83,7 +90,7 @@
 							able to find the pending / paid fine amounts of the different
 							borrowers.</p>
 						<p>
-							<a class="btn btn-primary" href="FineTrackingController"
+							<a class="btn btn-primary" href="leave.jsp"
 								role="button">Track fines &raquo;</a>
 						</p>
 					</div>
