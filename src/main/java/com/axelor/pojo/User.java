@@ -39,6 +39,9 @@ public class User {
     @Column(name = "gender")
     private String gendre;
     
+    @Column(name = "password")
+    private String password;
+    
     @Column(name = "status")
     private int status;       // 0 -> non-active and 1 -> active 
     
@@ -63,11 +66,12 @@ public class User {
     public User() {
     }
 
-    public User( String enNo, String name, String email, String date, String gendre, int status, int type) {
+    public User( String enNo, String name, String email, String password,String date, String gendre, int status, int type) {
        
         this.enNo = enNo;
         this.name = name;
         this.email = email;
+        this.password = password;
         this.dob = date;
         this.gendre = gendre;
         this.status = status;
@@ -172,5 +176,14 @@ public class User {
 		this.leaves = leaves;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
     
 }
