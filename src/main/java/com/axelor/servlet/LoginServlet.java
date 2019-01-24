@@ -13,8 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import com.axelor.pojo.User;
 import com.axelor.service.Login;
+import com.google.inject.Singleton;
 
-
+@Singleton
 public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

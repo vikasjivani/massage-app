@@ -1,11 +1,7 @@
 package com.axelor.service;
 
-import java.util.List;
-import java.util.Set;
-
 import org.hibernate.Session;
 
-import com.axelor.pojo.Semester;
 import com.axelor.pojo.User;
 import com.axelor.utility.Configur;
 

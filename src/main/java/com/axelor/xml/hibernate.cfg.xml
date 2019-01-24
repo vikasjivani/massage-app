@@ -37,6 +37,8 @@
 <mapping class="com.axelor.pojo.MoNo" />
 <mapping class="com.axelor.pojo.User" />
 <mapping class="com.axelor.pojo.Leave"/>
+<mapping class="com.axelor.pojo.Message"/>
+
         
            
              </session-factory>

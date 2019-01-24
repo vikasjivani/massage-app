@@ -19,84 +19,84 @@ public class Main {
 		Transaction tr;
 		Query query;
 
-		User stu1 = new User();
-		stu1.setEnNo("it2019");
-		stu1.setEmail("axelor@gmail.com");
-		stu1.setPassword("123");
-		stu1.setName("axelor");
-		stu1.setStatus(1);
-		stu1.setType(1);
-		
-		
-		MoNo mn1 = new MoNo("983475", stu1);
-		MoNo mn2 = new MoNo("034875", stu1);
-		Set<MoNo> monos = new HashSet<>();
-		monos.add(mn1);
-		monos.add(mn1);
-
-		Semester sem1 = new Semester("sem1");
-		Semester sem2 = new Semester("sem2");
-		Set<Semester> sems = new HashSet<>();
-		sems.add(sem1);
-		sems.add(sem2);
+//		User stu1 = new User();
+//		stu1.setEnNo("it2019");
+//		stu1.setEmail("axelor@gmail.com");
+//		stu1.setPassword("123");
+//		stu1.setName("axelor");
+//		stu1.setStatus(1);
+//		stu1.setType(1);
+//		
+//		
+//		MoNo mn1 = new MoNo("983475", stu1);
+//		MoNo mn2 = new MoNo("034875", stu1);
+//		Set<MoNo> monos = new HashSet<>();
+//		monos.add(mn1);
+//		monos.add(mn1);
+//
+//		Semester sem1 = new Semester("sem1");
+//		Semester sem2 = new Semester("sem2");
+//		Set<Semester> sems = new HashSet<>();
+//		sems.add(sem1);
+//		sems.add(sem2);
 
 		con = new Configuration().configure("com/axelor/xml/hibernate.cfg.xml");
 
 		sf = con.buildSessionFactory();
 
-		ss = sf.openSession();
-		//User stu1 = ss.find(User.class, 88);     //for only many record update
-		
-		Leave l1 = new Leave("1/2/2019", "4/2/2019", "no", 1, 1, stu1);
-		Leave l2 = new Leave("12/3/2019", "14/3/2019", "no", 1, 1, stu1);
-		Set<Leave> leaves = new HashSet<Leave>();
-		leaves.add(l1);
-		leaves.add(l2);
-
-		
-		
-		
-		
-		stu1.setMoNos(monos);
-		stu1.setSemesters(sems);
-    	stu1.setLeaves(leaves);
-		
-//		 query = ss.createQuery("from User where uid = 5");
+//		ss = sf.openSession();
+//		//User stu1 = ss.find(User.class, 88);     //for only many record update
 //		
-//		 List<User> user =query.list();
+//		Leave l1 = new Leave("1/2/2019", "4/2/2019", "no", 1, 1, stu1);
+//		Leave l2 = new Leave("12/3/2019", "14/3/2019", "no", 1, 1, stu1);
+//		Set<Leave> leaves = new HashSet<Leave>();
+//		leaves.add(l1);
+//		leaves.add(l2);
+//
 //		
-//		 for(User u : user) {
-//		 System.out.println("\n\n"+u.getName());
-//		 Set<Semester> sem = u.getSemesters();
-//		 for(Semester s : sem) {
 //		
-//		 System.out.println("\n"+s.getSem());
-//		 }
-//		 }
 //		
-		
-		
-		tr = ss.beginTransaction();
-
-		
-		
-		
-		ss.save(sem1);
-		ss.save(sem2);
-		ss.save(mn1);
-		ss.save(mn2);
-		ss.save(l1);
-		ss.save(l2);
-		ss.save(stu1);
-		
-		
-		
-		
-//		ss.persist(l1);
-//		ss.persist(l2);
-		
-		
-		tr.commit();
+//		
+//		stu1.setMoNos(monos);
+//		stu1.setSemesters(sems);
+//    	stu1.setLeaves(leaves);
+//		
+////		 query = ss.createQuery("from User where uid = 5");
+////		
+////		 List<User> user =query.list();
+////		
+////		 for(User u : user) {
+////		 System.out.println("\n\n"+u.getName());
+////		 Set<Semester> sem = u.getSemesters();
+////		 for(Semester s : sem) {
+////		
+////		 System.out.println("\n"+s.getSem());
+////		 }
+////		 }
+////		
+//		
+//		
+//		tr = ss.beginTransaction();
+//
+//		
+//		
+//		
+//		ss.save(sem1);
+//		ss.save(sem2);
+//		ss.save(mn1);
+//		ss.save(mn2);
+//		ss.save(l1);
+//		ss.save(l2);
+//		ss.save(stu1);
+//		
+//		
+//		
+//		
+////		ss.persist(l1);
+////		ss.persist(l2);
+//		
+//		
+//		tr.commit();
 
 	}
 

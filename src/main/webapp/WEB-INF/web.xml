@@ -5,27 +5,42 @@
 
 
 <display-name>my-erp</display-name>
-<servlet>
-   <servlet-name>HelloWorld</servlet-name>
-   <servlet-class>com.axelor.servlet.LoginServlet</servlet-class>
-</servlet>
-<servlet>
-	<description>
-	</description>
-	<display-name>LeaveServlet</display-name>
-	<servlet-name>LeaveServlet</servlet-name>
-	<servlet-class>com.axelor.servlet.LeaveServlet</servlet-class>
-</servlet>
 
-<servlet-mapping>
-   <servlet-name>HelloWorld</servlet-name>
-   <url-pattern>/login</url-pattern>
-</servlet-mapping>
-<servlet-mapping>
-	<servlet-name>LeaveServlet</servlet-name>
-	<url-pattern>/LeaveServlet</url-pattern>
-</servlet-mapping>
+	 <filter>
+        <filter-name>guiceFilter</filter-name>
+        <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>guiceFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <listener>
+        <listener-class>com.axelor.guice.ServletConfig</listener-class>
+    </listener>
 
+    
+
+
+<context-param> 
+        <param-name>resteasy.servlet.mapping.prefix</param-name> 
+        <param-value>/rest</param-value> 
+    </context-param> 
+   
+    <servlet> 
+        <servlet-name>resteasy-servlet</servlet-name> 
+        <servlet-class> 
+            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher  
+                </servlet-class> 
+        <init-param> 
+            <param-name>javax.ws.rs.Application</param-name> 
+            <param-value>com.axelor.resteasy.MessageApplication</param-value> 
+        </init-param> 
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>resteasy-servlet</servlet-name> 
+        <url-pattern>/rest/*</url-pattern> 
+    </servlet-mapping>
+    
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

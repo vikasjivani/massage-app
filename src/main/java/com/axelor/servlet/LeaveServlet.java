@@ -13,11 +13,12 @@ import javax.servlet.http.HttpSession;
 
 import com.axelor.pojo.Leave;
 import com.axelor.pojo.User;
+import com.google.inject.Singleton;
 
 
 
-
-@WebServlet("/leave")
+@Singleton
+//@WebServlet("/leave")
 public class LeaveServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

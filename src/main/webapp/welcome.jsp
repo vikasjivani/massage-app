@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@page import="com.axelor.pojo.User"%>
 
 <% User user = (User)session.getAttribute("user"); %>
@@ -48,7 +49,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h2>Book Search</h2>
+						<h2>Explore Chat</h2>
 					</div>
 					<div class="panel-body">
 						<p>This library management system allows you to search for
@@ -56,7 +57,7 @@
 							will be able to search for books, check their availability and
 							check out that book.</p>
 						<p>
-							<a class="btn btn-primary" href="SearchBookController"
+							<a class="btn btn-primary" href="chat.jsp"
 								role="button">Search Book &raquo;</a>
 						</p>
 					</div>
