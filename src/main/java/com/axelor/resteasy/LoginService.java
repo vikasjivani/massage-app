@@ -23,7 +23,7 @@ public class LoginService {
 		boolean result = Login.ckeckLogin(user.getEmail(), user.getPassword());
 		System.out.println(result);
 		if(result) {
-			return "login sucess..."+user.getEmail();
+			return "login sucess !!!..."+user.getEmail();
 		}
 		return "invalid Email or Password";
 	}
